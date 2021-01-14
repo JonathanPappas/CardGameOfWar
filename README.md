@@ -1,7 +1,6 @@
 # CardGameOfWar
 On average, how long does war take
 
-```swift
 //
 //  main.swift
 //  Arena10
@@ -68,6 +67,7 @@ struct Game {
     var player2 = Deck.Empty()
     var gameOver = false
     var rounds = 0
+    var totalWars = 0
     
     init() {
         var deck = Deck.Full()
@@ -101,8 +101,8 @@ struct Game {
         if player1.cards.count == 0 || player2.cards.count == 0 { return }
         
         if player1RevealedCard.equalTo(player2RevealedCard) {
-            // check if p1 has 0 cards
             // special war time
+            numOfWars += 1
             war([player1RevealedCard, player2RevealedCard] + potCards)
         } else if player1RevealedCard.lessThan(player2RevealedCard) {
             // player 2 won
@@ -135,7 +135,8 @@ struct Game {
 }
 
 
-var numOfRounds: [Int] = []
+var numOfRounds = 0
+var numOfWars = 0
 
 for i in 1...10000 {
     //print("Game \(numOfRounds.count)")
@@ -146,10 +147,12 @@ for i in 1...10000 {
     //print("Rounds: \(game.rounds)")
     //print("Player 1 Cards Left: \(game.player1.cards.count)")
     //print("Player 2 Cards Left: \(game.player2.cards.count)")
-    numOfRounds.append(game.rounds)
+    numOfRounds += game.rounds
+    numOfWars += game.totalWars
 }
 
-print("Average Rounds: \(Double(numOfRounds.reduce(0) { $0 + $1 }) / 10000)")
+print("Average Rounds: \(numOfRounds / 10000)")
+print("Average War Ties: \(numOfWars / 10000)")
 
 
 //let myDeck = Deck()
@@ -157,4 +160,3 @@ print("Average Rounds: \(Double(numOfRounds.reduce(0) { $0 + $1 }) / 10000)")
 //print(myDeck.cards.count)
 
 //let myCard = Card.init(suit: .spade, number: 10)
-```
