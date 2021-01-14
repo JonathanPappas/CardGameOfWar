@@ -1,5 +1,5 @@
 # CardGameOfWar
-On average, how long does war take?
+On average, how long does war take? (2 player game?)
  - Average Rounds Per Game: 274
  - Average War Ties Per Game: 17
  
@@ -355,5 +355,4 @@ Average War Ties Per Game: 1
 Average Nobody Wins: 10000 in 10000
 Average Trashed Cards Per Game: 52.0
 –––––
-Program ended with exit code: 0
 ```
