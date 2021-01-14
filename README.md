@@ -1,7 +1,7 @@
 # CardGameOfWar
 On average, how long does war take?
- - Rounds Average: 220
- - Tied Wars Per Game: 13
+ - Average Rounds Per Game: 274
+ - Average War Ties Per Game: 17
  
  ```swift
 func warometer(totalPlayers: Int, rounds: Int) {
