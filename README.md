@@ -1,6 +1,7 @@
 # CardGameOfWar
 On average, how long does war take
 
+```swift
 //
 //  main.swift
 //  Arena10
